@@ -1,0 +1,20 @@
+curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ./bin/youtube-dl
+chmod u+rx ./bin/youtube-dl
+
+
+
+bin/youtube-dl {src_url} -g 
+bin/youtube-dl {src_url} -e
+bin/youtube-dl {src_url} --get-id
+bin/youtube-dl {src_url} --get-thumbnail
+bin/youtube-dl {src_url} --get-description
+bin/youtube-dl {src_url} --get-duration
+
+
+
+-g, --get-url                        Simulate, quiet but print URL
+    -e, --get-title                      Simulate, quiet but print title
+    --get-id                             Simulate, quiet but print id
+    --get-thumbnail                      Simulate, quiet but print thumbnail URL
+    --get-description                    Simulate, quiet but print video description
+    --get-duration                       Simulate, quiet but print video length
