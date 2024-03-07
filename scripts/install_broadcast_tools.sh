@@ -5,7 +5,9 @@
 mkdir -p installs
 cd installs
 wget https://www.rocketbroadcaster.com/streaming-audio-server/downloads/ubuntu-20.04/rsas_0.1.20-1_amd64.deb
-sudo apt-get install -y libogg0
+sudo apt install -y libogg0
+sudo apt install -y libogg-dev
+
 sudo dpkg -i rsas*.deb
 
 # install IceS (for sending syndication playlist to RB)

@@ -6,3 +6,4 @@ libshout-dev
 mpg321
 vorbis-tools
 ices2
+pipx

@@ -8,10 +8,14 @@ setup-dirs:
 
 
 install-reqs:
+
+	#python3 -m pip install --user pipx
+	#python3 -m pipx ensurepath
 	#
 	# core libraries and CLI utils 
 	#
 	cat required_system_installs.txt | xargs sudo apt install -y 
+
 	#
 	# ngrok (for testing from a private network)
 	#
