@@ -46,7 +46,7 @@ icecast-test:
 
 
 icecast-up:
-	rsas --icecast-config config/broadcast_config.xml
+	rsas -b --icecast-config config/broadcast_config.xml > logs/broadcast.log 2>&1
 
 
 ices-up:
