@@ -5,6 +5,7 @@
 
 setup-dirs:
 	cat required_dirs.txt | xargs mkdir -p
+	mkdir tempdata/config
 
 
 install-reqs:
@@ -25,15 +26,19 @@ install-reqs:
 	| sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install -y ngrok
 
 
+install-configs:
+	cp tempdata/config/* config/
+
+
 gen-icecast-config:
 	warp --py --template-file=templates/icecast_config.xml.tpl \
 	--params=mountname:$$MOUNTNAME,src_client_user:$$STREAM_USER,src_client_pw:$$STREAM_PW,max_listeners:0 \
-	> config/broadcast_config.xml
+	> tempdata/config/broadcast_config.xml
 
 
 gen-ices-config:
 	cat tempdata/ices_params.json | warp --py --template-file=templates/base_autoplay.xml.tpl -s \
-	> config/base_autoplay.xml
+	> tempdata/config/base_autoplay.xml
 	
 
 icecast-test:
